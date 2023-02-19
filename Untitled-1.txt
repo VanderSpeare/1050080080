@@ -1,0 +1,192 @@
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+// khai bao thu vien 1 lan
+//kiem tra so chinh phuong
+int main()
+{
+  int n;
+  printf("\n nhap n = ");
+  scanf("%d", &n);
+  int i = 0;
+  while(i*i <= n)
+  {
+    if(i*i == n)
+  }
+    {
+    printf("%d la so chinh phuong!\n", n);
+    }
+    else 
+    printf("%d khong phai la so chin phuong!\n", n);
+
+}
+
+// xep loai hoc tap hoc sinh
+#define GIOI "\nXep loai gioi"
+#define KHA "\nXep loai kha"
+#define TB "\nXep loai trung binh"
+#define KEM "\nXep loai kem"
+int main()
+{
+    int n
+    if (a < 5)
+    {
+        printf(KEM);
+    }
+    else if (a < 6.7)
+    {
+        printf(TB);
+    }
+    else if(dtb < 8.0)
+    {
+        printf(KHA);
+    }
+    else
+    {
+        printf(GIOI);
+    }
+}
+
+
+// giai thua so nguyen m
+
+int main()
+{
+   int c, n, a = 1;
+   printf("nhap so nguyen\n");
+   scanf("%d", &n);
+   while (n<0)
+   printf ("vui long nhap so nguyen")
+   return 1
+   do while (c = 1; c <= n; c++) a = a * c;      
+   printf("giai thua cua %d = %d\n", n, a);
+   return 0;
+}
+
+// so nguyen gom ba chu so
+
+
+#define 0 "\n Khong"
+#define 1 "\n Mot"
+#define 2 "\n Hai"
+#define 3 "\n Ba"
+#define 4 "\n Bon"
+#define 5 "\n Nam"
+#define 6 "\n Sau"
+#define 7 "\n Bay"
+#define 8 "\n Tam"
+#define 9 "\n Chin"
+
+int main()
+{
+    int x, y, z;
+    printf("nhap x y z la cac chu so tuong ung hang tram, hang chuc, hang donvi x,y,z");
+    scanf("%%d ,&x, &y, &z");
+    switch(x)
+    {
+        case 1 :
+        printf ("Mot Tram ");
+        break;
+        case 2 :
+        printf ("Hai Tram ");
+        break;
+        case 3 :
+        printf ("Ba Tram ");
+        break;
+        case 4 :
+        printf ("Bon Tram ");
+        break;
+        case 5 :
+        printf ("Nam Tram ");
+        break;
+        case 6 :
+        printf ("Sau Tram ");
+        break;
+        case 7 :
+        printf ("Bay Tram ");
+        break;
+        case 8 :
+        printf ("Tam Tram ");
+        break;
+        case 9 :
+        printf ("Chin Tram ");
+        break;
+        default:
+            printf("so ban nhap nhu dau bui vui long nhap lai");
+    }
+     switch(y)
+    {
+        case 1 :
+        printf ("Mot Chuc ");
+        break;
+        case 2 :
+        printf ("Hai Chuc ");
+        break;
+        case 3 :
+        printf ("Ba Chuc ");
+        break;
+        case 4 :
+        printf ("Bon Chuc ");
+        break;
+        case 5 :
+        printf ("Nam Chuc ");
+        break;
+        case 6 :
+        printf ("Sau Chuc ");
+        break;
+        case 7 :
+        printf ("Bay Chuc ");
+        break;
+        case 8 :
+        printf ("Tam Chuc ");
+        break;
+        case 9 :
+        printf ("Chin Chuc ");
+        break;
+        case 0 :
+        printf (" Le ");
+        break;
+        default:
+            printf("so ban nhap nhu dau bui vui long nhap lai");
+        return 1
+        }
+ switch(z)
+    {
+        case 1 :
+        printf ("Mot");
+        break;
+        case 2 :
+        printf ("Hai");
+        break;
+        case 3 :
+        printf ("Ba");
+        break;
+        case 4 :
+        printf ("Bon");
+        break;
+        case 5 :
+        printf ("Nam");
+        break;
+        case 6 :
+        printf ("Sau");
+        break;
+        case 7 :
+        printf ("Bay");
+        break;
+        case 8 :
+        printf ("Tam");
+        break;
+        case 9 :
+        printf ("Chin");
+        break;
+        case  :
+        printf ("Khong ");
+        break;
+        default:
+            printf("so ban nhap nhu dau bui vui long nhap lai");
+        return 1;
+    }
+}
+
+//kieu du lieu khai bao thon tin cua thanh pho
+
