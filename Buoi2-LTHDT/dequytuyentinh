@@ -1,0 +1,23 @@
+#include<iostream>  
+using namespace std;
+int GiaiThua(int n) {
+    // nếu người dùng nhập n == 1 thì thoát khỏi đệ quy
+    if (n == 1)
+        return 1;
+    else
+    //ngược lại thì gọi hàm đệ quy với tham số n - 1
+        return (n * GiaiThua(n - 1));
+}
+  
+int main()   
+{    
+  //khai báo biến n là số cần tính giai thừa
+    int n;
+    cout << "Nhập số nguyên dượng n cần tính giai thừa: ";
+    cin >> n;
+    cout << "Giai thừa của " << n << " là: " << GiaiThua(n) << endl;
+ 
+    cout<<"\n-\n";
+    cout<<" ";
+    return 0;  
+}
