@@ -1,0 +1,94 @@
+// tham khảo tài liệu nhóm 9 (hàng đợi Queue) bài thuyết trình trên lớp
+// Khánh Nam trình bày
+#include <conio.h>
+using namespace std;
+// Macros
+#ifndef _ALWAYS_INLINE_
+#if defined(_GNUC_)
+#define _ALWAYS_INLINE_ __attribute__((_always_inline_)) inline
+#elif defined(_MSC_VER)
+#define _ALWAYS_INLINE_ __forceinline
+#else
+#define _ALWAYS_INLINE_ inline
+#endif
+#endif
+
+#ifdef _MSC_VER
+#define GENDERATE_TRAP() __debugbreak()
+#else
+#define GENDERATE_TRAP() __builtin_trap()
+#endif
+struct Node // khai báo thành phần hàng đợi
+{
+    T value;
+    Node* next;
+};
+private:
+    Node* first;
+    Node* rear;
+    unsigned int cached_size;
+// hàm tạo và hàm hủy
+Queue() {
+    first = nullptr;
+    rear = nullptr;
+    cached_size = 0;
+}
+~Queue(){
+    clear;
+}
+// hàm Enqueue
+_ALWAYS_INLINE_ void push(const T& value){
+    Node* next = new Node();
+    next->next = nullptr;
+    next->value = value;
+    if (first == nullptr)// kiểm tra mảng rỗng nếu mảng ko có gì thì phần tử tiếp theo bằng phần tử đầu và là phần tử cuối
+    {
+        first = next;
+        rear = next;
+    }
+    else // ngược lại thêm phần tử vào cuối mảng
+    {
+        rear->next = next;
+        rear = next;    
+    }
+    cached_size++;
+}
+_ALWAYS_INLINE_ T pop() {
+    if (first == nullptr) GENRERATE_TRAP();
+    Node* iter = first;
+    T retval = iter-> value;
+    first= first->next;
+    if (first == nullptr) rear == nullptr; // hàm kiểm tra kết thúc hàng đợi có trống thì end
+    delete iter;
+    cached_size--;
+    return retval;
+}
+// hàm phụ trợ
+_ALWAYS_INLINE_ unsigned int size() const noexcept {return cached_size; }
+_ALWAYS_INLINE_ bool empty() const noexcept {return !size(); }
+_ALWAYS_INLINE_ void clear() {
+    while (!empty()) pop();
+}
+int main() {
+    long n;
+    Queue <long> queue;
+    do
+    {
+        std:: cout<< "N = ";
+        std:: cin>>n;
+        Queue.push(n);
+    } while ({n !=0});
+    return 0;
+}
+
+/*
+Một queue là một cấu trúc dữ liệu mà việc thêm vào được thực hiện ở một đầu (rear)
+ và việc lấy ra được thực hiện ở đầu còn lại (front).Với Front là vị trí đầu tiên và Rear là vị trí cuối hàng đợi
+ Có 2 thao tác chính với hàng đợi: 
+Enqueue: Chèn dữ liệu vào cuối hàng đợi (chèn vào sau Rear).
+Dequeue: Lấy dữ liệu ra khỏi hàng đợi (lấy ra từ Front)
+Chúng ta xem Rear luôn luôn là vị trí cuối cùng trong hàng đợi,
+do vậy khi chèn dữ liệu mới vào, ta phải tăng vị trí này lên 1 đơn vị để được vị trí rear mới.
+hác với Enqueue, Dequeue là thao tác lấy dữ liệu ra hàng đợi
+Front sẽ là vị trí lấy dữ liệu ra khỏi hàng đợi, để chuẩn bị lần Dequeue tiếp theo ta tăng giá trị Front lên 1
+*/
