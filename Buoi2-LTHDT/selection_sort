@@ -1,0 +1,48 @@
+#include<conio.h>
+using namespace std;
+
+void HoanVi (int a, int b)
+{
+  int temp = a;
+  a = b;
+  b = temp;
+}
+void selectionSort( int arr[] ,int n)
+  int i,j,min;
+  for (i=0; i < n-1; i++)
+  {
+   min= i;
+        for (j = i+1; j < n; j++)
+        {
+          if (arr[j] < arr[min]) // đặt min ở vị trí đầu tiên, so sánh min lần lượt thông qua j để tìm số nhỏ nhất
+              min = j;
+        }
+        if (min !=i) // khi tìm thấy số nhỏ nhất hoán vị nó với vị trí hiện tại (i)
+            HoanVi(&arr[min_idx], &arr[i]);
+  }
+void XuatMang(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+    {
+      cout << arr[i] << " ";
+      cout << endl;
+    }
+}
+int main()
+{
+    int arr[] = {13, 45, 12, 22, 2147483647};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    selectionSort(arr, n);
+    cout << "Sorted array: \n";
+    XuatMang(arr, n);
+    return 0;
+}
+
+/* ví dụ;
+cho mảng a gồm 5 6 2 3 1
+so sánh i ở vị trí đầu tiên với các số còn lại để tìm dc số nhỏ nhất tức ở đây là 1 hoán vị 2 số này với nhau
+ta được mảng 1 6 2 3 5 rồi tăng i lên 1 đơn vị ( vị trí số 2 )
+tiếp tục so sánh 6 với các số còn lại để tìm số nhỏ nhất thực hiện tương tự như trên
+lặp lại cho đến khi mảng đã được sắp xếp hoàn toàn
+*/
