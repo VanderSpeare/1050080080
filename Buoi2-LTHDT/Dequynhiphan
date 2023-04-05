@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+  //fibo= fibonacci
+int fibo(int n){
+  if(n <= 2) return 1;
+  return fibo(n - 1) + fib(n - 2);
+}
+  
+int main() {
+  int kq,n;
+  cout<<"Nhập vị trí n muốn tìm trong dãy fibonacci: ";
+  cin>>n;
+  kq = fibo(n);
+  cout<<"\nSố fibonacci ở vị trí "<<n<<" là: "<<kq;
+  }
