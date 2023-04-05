@@ -1,0 +1,31 @@
+
+#include <iostream>
+using namespace std;
+ 
+int search(int arr[], int N, int x)
+{
+    int i;
+    for (i = 0; i < N; i++)
+        if (arr[i] == x)
+            return i;
+    return -1;
+}
+ 
+int main(void)
+{
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int x = 10;
+    int N = sizeof(arr) / sizeof(arr[0]);
+ 
+    // hàm gọi
+    int ketqua = search(arr, N, x);
+    (ketqua == -1)
+        ? cout << "Phần tử không có trong mảng"
+        : cout << "Phần tử có mặt tại chỉ mục " << ketqua;
+    return 0;
+}
+/*ví dụ:
+Đặt i = 0 và kiểm tra khóa bằng arr[0].khóa và mảng [0] không giống nhau. Vì vậy đặt i = 1 và khớp khóa với arr[1].
+mảng [1] và khóa là khác nhau. Tăng i và khóa so sánh với arr[2].mảng [2] không giống với khóa. Tăng i và khóa so sánh với arr[3].
+Lặp lại cho đến khi tìm dc khóa cần tìm.
+*/

@@ -1,0 +1,42 @@
+// nguồn tham khảo bài thuyết trình nhóm tìm kiếm nhị phân
+#include <bits/stdc++.h>
+#include <iostream>
+using namespace std;
+ 
+nt binarySearch(int arr[], int l, int r, int x)
+{
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+ 
+        // lấy phần tử ở giữa mảng vd 6/2=3 lấy ô số 3
+        if (arr[mid] == x)
+            return mid;
+        // nếu phần tử nhỏ hơn phần tử ở giữa thì:
+        // nó sẽ chỉ có thể xuất hiện bên trái mảng
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid - 1, x);
+        // và ngược lại
+        return binarySearch(arr, mid + 1, r, x);
+    }
+    return -1;
+}
+ 
+int main(void)
+{
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int x = 10;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int result = binarySearch(arr, 0, n - 1, x);
+    (result == -1)
+        ? cout << "Element is not present in array"
+        : cout << "Element is present at index " << result;
+    return 0;
+}
+
+/* ví dụInput: arr[] = {10, 20, 30, 50, 60, 80, 110, 130, 140, 170}, x = 110
+Output: 6
+giải thích: nguyên tố x đại diện cho chỉ mục 6. 
+
+Input: arr[] = {10, 20, 30, 40, 60, 110, 120, 130, 170}, x = 175
+Output: -1
+Explanation: nguyên tố x không có trong arr[].
